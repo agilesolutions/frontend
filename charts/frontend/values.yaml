@@ -1,8 +1,8 @@
 replicaCount: 1
 revisionHistoryLimit: 1
-image: frontend
-version: 1.0
-namespace: frontend
+image: agilesolutions/frontend
+version: latest
+namespace: default
 pullPolicy: IfNotPresent
 resources:
   requests:
