@@ -4,6 +4,7 @@ Demonstrates how to deploy Springboot apps with HELM and inject environment spec
 ## Run this demonstration
 
 * goto [Katacoda HELM course page](https://www.katacoda.com/courses/kubernetes/helm-package-manager)
+* [goto play with k8s](https://labs.play-with-k8s.com/)
 * git clone https://github.com/agilesolutions/frontend.git
 * cd frontend/charts/frontend
 
@@ -17,10 +18,12 @@ helm install --name frontend --set version=latest .
 
 ## Debugging and terminal into demo container
 
-1. watch kubectl get all -n frontend
-2. watch kubectl get pods -n frontend
-3. kubectl logs -f demo-xxx -n frontend
-4. kubectl exec -ti demo-xxx -n frontend -- /bin/sh
+```
+watch kubectl get all -n frontend
+watch kubectl get pods -n frontend
+kubectl logs -f demo-xxx -n frontend
+kubectl exec -ti demo-xxx -n frontend -- /bin/sh
+```
 
 ## setup jenkins
 
@@ -35,12 +38,59 @@ export SERVICE_IP=$(kubectl get svc --namespace jenkins jenkins --template "{{ r
 
 echo http://$SERVICE_IP:8080/login
 
+watch kubectl get all -n jenkins
+watch kubectl get pods -n jenkins
+kubectl logs -f demo-xxx -n jenkins
+kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 
 ```
 
-
 * [helm install jenkins](https://akomljen.com/set-up-a-jenkins-ci-cd-pipeline-with-kubernetes/)
 * [read more ](https://cloud.google.com/solutions/jenkins-on-container-engine)
+
+## Testing Jenkins
+
+
+```
+kubectl run jenkins -ti --namespace jenkins --image=jenkinsci/blueocean:latest --overrides='
+{
+"apiVersion": "apps/v1",
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "name": "jenkins",
+            "image": "jenkinsci/blueocean:latest",
+            "args": [
+              "bash"
+            ],
+            "stdin": true,
+            "stdinOnce": true,
+            "tty": true,
+            "volumeMounts": [{
+              "mountPath": "/home/store",
+              "name": "store"
+            }]
+          }
+        ],
+        "volumes": [{
+          "name":"store",
+          "emptyDir":{}
+        }]
+      }
+    }
+  }
+}'
+
+kubectl get pods -n jenkins
+
+kubectl delete deployment -n jenkins
+
+
+
+```
+
 
 ## HELM connecting your cluster
 
