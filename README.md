@@ -52,9 +52,9 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 
 
 ```
-kubectl create namespace jenkins
+ 
 
-kubectl run jenkins -ti --namespace jenkins --port=8080 --image=jenkinsci/blueocean:latest --overrides='
+kubectl run jenkins --namespace=jenkins --port=8080 --image=jenkinsci/blueocean:latest --overrides='
 {
 "apiVersion": "apps/v1",
   "spec": {
@@ -85,9 +85,9 @@ kubectl run jenkins -ti --namespace jenkins --port=8080 --image=jenkinsci/blueoc
   }
 }'
 
-kubectl expose deployment jenkins --target-port=8080 --type=NodePort
+kubectl expose deployment jenkins --port=8080 --type=LoadBalancer -n jenkins
 
-kubectl get service jenkins -n jenkins
+kubectl expose deployment jenkins --port=8080 --type=LoadBalancer -n jenkins
 
 kubectl get pods -n jenkins
 
