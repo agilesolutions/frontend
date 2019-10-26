@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "{{  .Chart.Name }}"
+  namespace: "{{  .Chart.Name }}"
+  labels:
+    chart: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  template:
+    metadata:
+      labels:
+        app: "{{  .Chart.Name }}-selector"
+        version: "{{  .Values.version }}"
+    spec:
+      containers:
+      - name: "{{  .Chart.Name  }}"
+        image: "{{ .Values.image }}:{{ .Values.version }}"
+        imagePullPolicy: {{ .Values.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.servicePort}}
+        resources:
+          requests:
+            cpu: "{{ .Values.resources.requests.cpu }}"
+            memory: "{{ .Values.resources.requests.memory }}"
+        volumeMounts:
+          -
+            mountPath: /usr/include
+            name: "{{  .Chart.Name }}"
+            readOnly: false
+        env:
+          - name: PORT
+            value : "{{ .Values.service.servicePort }}"
+      volumes:
+      - name: "{{  .Chart.Name }}"
+        configMap:
+          name: "{{  .Chart.Name }}"

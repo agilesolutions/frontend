@@ -1,0 +1,15 @@
+replicaCount: 1
+revisionHistoryLimit: 1
+image: frontend
+version: 1.0
+namespace: frontend
+pullPolicy: IfNotPresent
+resources:
+  requests:
+    cpu: 200m
+    memory: 300Mi
+service:
+  type: LoadBalancer
+  name: frontend
+  port: 80
+  targetPort: 8080
