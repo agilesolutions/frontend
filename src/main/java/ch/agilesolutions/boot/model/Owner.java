@@ -1,4 +1,4 @@
-package com.agilesolutions.boot.model;
+package ch.agilesolutions.boot.model;
 
 import java.util.List;
 

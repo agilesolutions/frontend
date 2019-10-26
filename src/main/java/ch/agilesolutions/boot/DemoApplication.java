@@ -1,4 +1,4 @@
-package com.agilesolutions.boot;
+package ch.agilesolutions.boot;
 
 import static net.logstash.logback.argument.StructuredArguments.kv;
 
@@ -10,11 +10,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.agilesolutions.boot.controller.CarController;
-import com.agilesolutions.boot.model.Car;
-import com.agilesolutions.boot.model.Owner;
-import com.agilesolutions.boot.repository.CarRepository;
-import com.agilesolutions.boot.repository.OwnerRepository;
+import ch.agilesolutions.boot.controller.CarController;
+import ch.agilesolutions.boot.model.Car;
+import ch.agilesolutions.boot.model.Owner;
+import ch.agilesolutions.boot.repository.CarRepository;
+import ch.agilesolutions.boot.repository.OwnerRepository;
 
 @SpringBootApplication
 public class DemoApplication {

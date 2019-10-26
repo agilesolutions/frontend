@@ -1,4 +1,4 @@
-package com.agilesolutions.boot.repository;
+package ch.agilesolutions.boot.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import com.agilesolutions.boot.model.Car;
+import ch.agilesolutions.boot.model.Car;
 
 @RepositoryRestResource
 public interface CarRepository extends CrudRepository <Car, Long> {

@@ -1,4 +1,4 @@
-package com.agilesolutions.boot.controller;
+package ch.agilesolutions.boot.controller;
 
 import static net.logstash.logback.argument.StructuredArguments.kv;
 
@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.agilesolutions.boot.model.Car;
-import com.agilesolutions.boot.repository.CarRepository;
+import ch.agilesolutions.boot.model.Car;
+import ch.agilesolutions.boot.repository.CarRepository;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

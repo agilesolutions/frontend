@@ -1,4 +1,4 @@
-package com.agilesolutions.boot.swagger;
+package ch.agilesolutions.boot.swagger;
 
 import java.util.Arrays;
 import java.util.HashSet;

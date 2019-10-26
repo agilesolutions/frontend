@@ -1,4 +1,4 @@
-package com.agilesolutions.boot.model;
+package ch.agilesolutions.boot.model;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
