@@ -52,7 +52,9 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 
 
 ```
-kubectl run jenkins -ti --namespace jenkins --image=jenkinsci/blueocean:latest --overrides='
+kubectl create namespace jenkins
+
+kubectl run jenkins -ti --namespace jenkins --port=8080 --image=jenkinsci/blueocean:latest --overrides='
 {
 "apiVersion": "apps/v1",
   "spec": {
@@ -83,6 +85,10 @@ kubectl run jenkins -ti --namespace jenkins --image=jenkinsci/blueocean:latest -
   }
 }'
 
+kubectl expose deployment jenkins --target-port=8080 --type=NodePort
+
+kubectl get service jenkins -n jenkins
+
 kubectl get pods -n jenkins
 
 kubectl delete deployment -n jenkins
@@ -90,6 +96,8 @@ kubectl delete deployment -n jenkins
 
 
 ```
+
+* [read about running](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
 
 
 ## HELM connecting your cluster
