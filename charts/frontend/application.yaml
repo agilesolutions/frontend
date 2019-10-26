@@ -1,0 +1,45 @@
+debug: true
+
+spring:
+  application:
+    name: demo
+    version: 1.0
+    environment: DEV
+  activemq:
+    broker-url: tcp://www.agilesolutions.com:61616
+  elasticsearch:
+    rest:
+      uris: http://www.agilesolutions.com:9200
+
+datasource:
+  url: jdbc:oracle:thin:@//XXX.agilesolutions.com:1700/XXX.agilesolutions.com
+  username: NGA
+  password: 2d724b9021260e5e6cee91
+  driver-class-name: oracle.jdbc.OracleDriver
+
+server:
+  servlet:
+    context-path: /demo
+
+flowable:
+  form:
+    app-url-root: ${server.servlet.context-path}
+  frontend:
+    notification-logo-url: "file:/u01/users/admrun/JB-logo.png"
+  platform:
+    idm:
+      default-password: test
+  websocket:
+    stomp-broker-addresses: www.agilesolutions.com:61613
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "*"
+    shutdown:
+      enabled: true
+      show-details: when_authorized
+security:
+  basic:
+    enabled: true
