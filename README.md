@@ -5,7 +5,7 @@ Demonstrates how to deploy Springboot apps with HELM and inject environment spec
 
 * goto [Katacoda HELM course page](https://www.katacoda.com/courses/kubernetes/helm-package-manager)
 * git clone https://github.com/agilesolutions/frontend.git
-* cd demonstration/charts/frontend
+* cd frontend/charts/frontend
 
 ## Verify, generate and install with HELM
 
