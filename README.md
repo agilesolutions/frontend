@@ -12,7 +12,7 @@ Demonstrates how to deploy Springboot apps with HELM and inject environment spec
 ```
 helm lint .
 helm template -f values.yaml .
-helm install --name demo --set version=latest -f values.yaml .
+helm install --name frontend --set version=latest .
 ```
 
 ## local skaffold build
@@ -33,10 +33,10 @@ skaffold build -p local
 
 ## Debugging and terminal into demo container
 
-1. watch kubectl get all -n demo
-2. watch kubectl get pods -n demo
-3. kubectl logs -f demo-xxx -n demo
-4. kubectl exec -ti demo-xxx -n demo -- /bin/sh
+1. watch kubectl get all -n frontend
+2. watch kubectl get pods -n frontend
+3. kubectl logs -f demo-xxx -n frontend
+4. kubectl exec -ti demo-xxx -n frontend -- /bin/sh
 
 ## HELM connecting your cluster
 
