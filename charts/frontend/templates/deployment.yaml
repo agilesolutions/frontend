@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: "{{  .Chart.Name }}"
-  namespace: "{{  .Chart.Name }}"
+  namespace: "{{  .Values.Namespace }}"
   labels:
     chart: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
 spec:
