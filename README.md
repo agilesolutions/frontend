@@ -98,6 +98,8 @@ http://localhost:8080
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.39/containers/maven:3-alpine/json: dial unix /var/run/docker.sock: connect: permission denied
 11:58:29.903481 durable_task_monitor.go:63: exit status 1
 ```
+[usermod -a -G docker jenkins](https://stackoverflow.com/questions/47854463/got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-uni)
+
 
 ## Testing Jenkins
 
