@@ -83,6 +83,22 @@ kubectl delete deployment -n jenkins
 
 ```
 
+## Problems Jenkins accessing docker sockets on kubernetes host
+
+Running on my PC
+
+```
+kubectl port-forward --namespace jenkins jenkins-fcc8d68c5-qcdh8 8080:8080
+
+http://localhost:8080
+```
+
+
+```
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.39/containers/maven:3-alpine/json: dial unix /var/run/docker.sock: connect: permission denied
+11:58:29.903481 durable_task_monitor.go:63: exit status 1
+```
+
 ## Testing Jenkins
 
 * [Accessing docker sock from POD](https://estl.tech/accessing-docker-from-a-kubernetes-pod-68996709c04b)

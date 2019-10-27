@@ -38,8 +38,6 @@ spec:
         env:
           - name: PORT
             value : "8080"
-        command: ["/bin/sh"]
-          args: ["-c", "usermod -aG docker $USER"]            
       volumes:
       - name: dockersock
         hostPath:
