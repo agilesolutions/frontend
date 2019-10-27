@@ -48,6 +48,34 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 * [helm install jenkins](https://akomljen.com/set-up-a-jenkins-ci-cd-pipeline-with-kubernetes/)
 * [read more ](https://cloud.google.com/solutions/jenkins-on-container-engine)
 
+## APPLYING jenkins
+
+[cheat](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
+```
+
+cd k8s
+
+kubectl creaste namespace jenkins
+
+apply -f deployment.yml
+
+kubectl get pods -n jenkins
+
+kubectl logs -f jenkins-f59b6b886-xbxkf -n jenkins
+
+kubectl exec -ti jenkins-f59b6b886-xbxkf -n jenkins /bin/sh
+
+kubectl describe deployment jenkins -n jenkins
+
+kubectl edit deployment jenkins -n jenkins
+
+watch kubectl get pods -n jenkins
+
+kubectl delete deployment -n jenkins
+
+```
+
 ## Testing Jenkins
 
 * [Accessing docker sock from POD](https://estl.tech/accessing-docker-from-a-kubernetes-pod-68996709c04b)
