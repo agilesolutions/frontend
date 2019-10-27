@@ -29,8 +29,10 @@ spec:
             cpu: "200m"
             memory: "300Mi"
         volumeMounts:
-        - name: docker-socket
-          mountPath: /var/run/docker.sock
+          -
+            mountPath: /var/run/docker.sock
+            name: "dockersock"
+            readOnly: true
         env:
           - name: PORT
             value : "8080"
