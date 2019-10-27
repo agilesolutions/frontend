@@ -50,8 +50,9 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 
 ## Testing Jenkins
 
-[Accessing docker sock from POD](https://estl.tech/accessing-docker-from-a-kubernetes-pod-68996709c04b)
-
+* [Accessing docker sock from POD](https://estl.tech/accessing-docker-from-a-kubernetes-pod-68996709c04b)
+* [GITHUB docker in docker to build containers](https://github.com/kubeflow/pipelines/issues/561)
+* [Anoter one](https://github.com/argoproj/argo/issues/826)
 
 ```
  
