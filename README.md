@@ -52,6 +52,7 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 
 * [cheat](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [Stackoverflow mounting docker sock](https://stackoverflow.com/questions/45165855/kubernetes-configure-deployment-to-mount-directory-from-local-kubernetes-host)
+* [About k8s HOSTPATH](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath)
 
 ```
 
