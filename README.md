@@ -99,6 +99,7 @@ Got permission denied while trying to connect to the Docker daemon socket at uni
 11:58:29.903481 durable_task_monitor.go:63: exit status 1
 ```
 [usermod -a -G docker jenkins](https://stackoverflow.com/questions/47854463/got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-uni)
+[RUN AS PROVILEGED USER security-contex](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
 
 ## Testing Jenkins
