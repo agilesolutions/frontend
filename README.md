@@ -73,14 +73,14 @@ kubectl run jenkins --namespace=jenkins --port=8080 --image=jenkinsci/blueocean:
             "stdinOnce": true,
             "tty": true,
             "volumeMounts": [{
-              "mountPath": "/home/store",
-              "name": "store"
+              "mountPath": "/var/run/docker.sock",
+              "name": "dockersock"
             }]
           }
         ],
         "volumes": [{
-          "name":"store",
-          "emptyDir":{}
+          "name": "dockersock",
+          "hostPath": "/var/run/docker.sock"
         }]
       }
     }
