@@ -19,12 +19,12 @@ spec:
         app: "jenkins"
     spec:
       securityContext:
-        runAsUser: root
+        runAsUser: 0
       containers:
       - name: "jenkins"
         image: "jenkinsci/blueocean:latest"
         securityContext:
-          runAsUser: root
+          runAsUser: 0
           privileged: true
         imagePullPolicy: IfNotPresent
         ports:
