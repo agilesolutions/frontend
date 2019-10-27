@@ -1,16 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    prometheus.io/scrape: 'true'
-  name: "jenkins"
-  namespace: "jenkins"
+  name: jenkins-svc
   labels:
-    chart: 'jenkins'
+    app: jenkins
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
-  - name: http
-    port: 8080
+  - port: 8080
+    nodePort: 30080
   selector:
-    app: "jenkins-selector"
+    app: jenkins

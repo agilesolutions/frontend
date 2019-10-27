@@ -16,8 +16,7 @@ spec:
   template:
     metadata:
       labels:
-        app: "jenkins-selector"
-        version: "latest"
+        app: "jenkins"
     spec:
       containers:
       - name: "jenkins"
