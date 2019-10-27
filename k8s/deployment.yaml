@@ -18,10 +18,13 @@ spec:
       labels:
         app: "jenkins"
     spec:
+      securityContext:
+        runAsUser: root
       containers:
       - name: "jenkins"
         image: "jenkinsci/blueocean:latest"
         securityContext:
+          runAsUser: root
           privileged: true
         imagePullPolicy: IfNotPresent
         ports:
@@ -34,7 +37,7 @@ spec:
           -
             mountPath: /var/run/docker.sock
             name: "dockersock"
-            readOnly: true
+            readOnly: false
         env:
           - name: PORT
             value : "8080"
