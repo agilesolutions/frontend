@@ -56,6 +56,9 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 * [Run Jenkins in secure mode](https://devops.stackexchange.com/questions/2506/docker-in-kubernetes-deployment)
 * [nice picture on skaffold](https://www.ibm.com/cloud/container-service?cm_mmc=Search_Google-_-Hybrid+Cloud_Cloud+Platform+Digital-_-WW_IDA-_-%2Bkubernetes_b&cm_mmca1=000023UA&cm_mmca2=10010608&cm_mmca7=1003284&cm_mmca8=kwd-88228236663&cm_mmca9=EAIaIQobChMIgt7otYO85QIV2ON3Ch3k-wsHEAAYASAAEgI4rfD_BwE&cm_mmca10=376193097037&cm_mmca11=b&gclid=EAIaIQobChMIgt7otYO85QIV2ON3Ch3k-wsHEAAYASAAEgI4rfD_BwE&gclsrc=aw.ds)
 
+[FIXING ACCESS DENIED ACCESSING DOCKER SOCKETS](https://stackoverflow.com/questions/56270070/permission-denied-when-connecting-to-docker-daemon-on-jenkinsci-blueocean-image)
+
+
 ```
 
 cd k8s
