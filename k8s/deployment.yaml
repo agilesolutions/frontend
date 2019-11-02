@@ -33,16 +33,16 @@ spec:
           requests:
             cpu: "200m"
             memory: "300Mi"
-        volumeMounts:
-          -
-            mountPath: /var/run/docker.sock
-            name: "dockersock"
-            readOnly: false
+#        volumeMounts:
+#          -
+#            mountPath: /var/run/docker.sock
+#            name: "dockersock"
+#            readOnly: false
         env:
           - name: PORT
             value : "8080"
-      volumes:
-      - name: dockersock
-        hostPath:
-          path: /var/run/docker.sock
-          type: File
+#      volumes:
+#      - name: dockersock
+#        hostPath:
+#          path: /var/run/docker.sock
+#          type: File
