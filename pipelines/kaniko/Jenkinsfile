@@ -19,11 +19,12 @@ pipeline {
     stage('dockerbuild') {
       agent {
           docker {
-              image 'gcr.io/kaniko-project/executor:debug'
+              image 'gcr.io/kaniko-project/executor:latest'
           }
       }
+      // read https://github.com/GoogleContainerTools/kaniko#demo
       steps {
-        sh 'mvn clean install'
+        sh '--dockerfile=Dockerfile --destination=agilesolutions/frontend:latest'
       }
     }
  }
