@@ -24,7 +24,7 @@ pipeline {
       }
       // read https://github.com/GoogleContainerTools/kaniko#demo
       steps {
-        sh '--dockerfile=Dockerfile --destination=agilesolutions/frontend:latest'
+        sh '--dockerfile=-Dockerfile --context=/opt/src --destination=agilesolutions/frontend:latest'
       }
     }
  }
