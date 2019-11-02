@@ -5,7 +5,7 @@ Demonstrates how to deploy Springboot apps with HELM and inject environment spec
 
 * goto [Katacoda HELM course page](https://www.katacoda.com/courses/kubernetes/helm-package-manager)
 * [goto play with k8s](https://labs.play-with-k8s.com/)
-* docker run -ti --rm gcr.io/kaniko-project/executor --Dockerfile=Dockerfile --context=/usr --destination=agilesolutions/frontend:latest
+* docker run -ti --rm gcr.io/kaniko-project/executor --dockerfile=Dockerfile --context=/usr --destination=agilesolutions/frontend:latest
 * git clone https://github.com/agilesolutions/frontend.git
 * cd frontend/charts/frontend
 
