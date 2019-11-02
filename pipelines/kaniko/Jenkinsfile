@@ -1,0 +1,30 @@
+pipeline {
+  agent none
+  environment {
+    DOCKER_IMAGE = null
+  }
+  stages {
+    stage('Build') {
+      agent {
+          docker {
+              image 'maven:3-alpine'
+            // do some caching on maven here
+              args '-v $HOME/.m2:/root/.m2'
+          }
+      }
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+    stage('dockerbuild') {
+      agent {
+          docker {
+              image 'gcr.io/kaniko-project/executor:debug'
+          }
+      }
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+ }
+}

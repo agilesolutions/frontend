@@ -63,7 +63,7 @@ kubectl exec -ti demo-xxx -n jenkins -- /bin/sh
 
 cd k8s
 
-kubectl creaste namespace jenkins
+kubectl create namespace jenkins
 
 apply -f deployment.yml
 
