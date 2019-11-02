@@ -13,7 +13,9 @@ pipeline {
           }
       }
       steps {
-        sh 'mvn clean install'
+          sh 'echo building'
+
+//        sh 'mvn clean install'
       }
     }
     stage('dockerbuild') {
