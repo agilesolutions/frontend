@@ -68,7 +68,7 @@ cd k8s
 
 kubectl create namespace jenkins
 
-apply -f deployment.yml
+kubectl apply -f deployment.yml
 
 kubectl get pods -n jenkins
 
