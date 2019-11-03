@@ -1,16 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: "jenkins"
-  namespace: "jenkins"
+  name: jenkins
+  namespace: jenkins
   labels:
-    chart: 'jenkins'
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "false"
-    nginx.ingress.kubernetes.io/backend-protocol: HTTP
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    
+    app: jenkins
 spec:
   rules:
     - host: 'jenkins'
