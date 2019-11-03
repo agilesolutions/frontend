@@ -22,7 +22,8 @@ spec:
 #        runAsUser: 0
       containers:
       - name: "jenkins"
-        image: "jenkinsci/blueocean:latest"
+        image: "jenkins/jenkins:latest"
+#        image: "jenkinsci/blueocean:latest"
         securityContext:
           runAsUser: 0
           privileged: true
