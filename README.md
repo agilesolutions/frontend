@@ -28,6 +28,8 @@ kubectl exec -ti demo-xxx -n frontend -- /bin/sh
 
 ## setup jenkins
 
+[download ci plugin](https://updates.jenkins-ci.org/download/plugins/kubernetes-ci/)
+
 ```
 helm install --name jenkins --namespace jenkins stable/jenkins
 
